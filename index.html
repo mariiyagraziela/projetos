@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="">
+    <title>Minha Primeira Página</title>
+  
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{margin:0;
+          padding:0;
+          box-sizing:border-box;}
+        body{
+            
+             background:#845EC2;
+             
+        }
+        header{
+            background:#D65DB1;
+            border:1px solid ; 
+            height:60px; 
+               
+       }
+        nav{
+            background:#D65DB1;
+            border:1px solid ; 
+            height:20px;
+            position:absolute;
+            margin-top:20px;
+            
+         }
+       
+        section{
+           width:1365px;
+           height:550px;
+           background:white;
+          
+       
+        }  main{
+            margin-left:100px;
+            background:#FF9671;
+            border:1px solid;
+            width:auto;
+            height:450px; 
+        }
+       
+        aside{
+           float:left;
+           background:#FF9671;
+           border:1px solid ;
+           width:250px;
+           height:450px;
+       }
+        footer{
+           background:#FF9671;
+           border:1px solid;
+           margin-top:10px;
+           width:;
+           height:150px;
+           
+       }
+        #id_mostraanotacoes_dousuario{
+           position:absolute;
+           margin-left:800px;
+           height:400px;
+           width:500px;
+           border:1px solid; 
+           background-color:white;
+       }
+        #trechosDasAnotacoes_estanoScript{border:1px solid ; background-color: green }
+    </style>
+</head>
+<body>
+    <header>
+        cabeça
+        <nav> links </nav>
+    </header>
+    <section>
+        <h1> Site de agenda </h1>
+        <aside>
+          aside mbhdbd
+        </aside>
+        <main>
+            <form id="meuformulario">
+                <label for="">nome</label>
+                <input type="text" id="notas" name="" placeholder="Digite um titulo"> </input>
+                <input type="" id="anotacoes" name="" placeholder="Sua nota..."></input>
+                <button type="button" onclick="escreverNoBloco()"> enviar </button>
+            </form>
+            <div id="id_mostraanotacoes_dousuario">
+                
+                <script>
+                    
+                    function escreverNoBloco(){
+                    const titulo = document.getElementById("notas").value;
+                    const texto = document.getElementById("anotacoes").value;
+                    if(titulo && texto !=null){
+                         const titulo_texto = "<h3>" + titulo + "</h3>" + "<p>"  + texto + "</p>";
+                         let todasAsNotas = [];
+                         todasAsNotas.push(titulo_texto);
+                      
+                         let mostraasnotas = " ";   
+                         todasAsNotas.forEach((ta)=>{ 
+                             mostraasnotas += "<div id='trechosDasAnotacoes_estanoScript'>"+ ta + "/div"  
+                             });
+                       
+                         document.getElementById('id_mostraanotacoes_dousuario').innerHTML = mostraasnotas;
+                          document.getElementById("notas").value = "";
+                          document.getElementById("anotacoes").value = "";
+                    }
+          }
+                </script>
+            </div>
+        </main>
+       
+    <footer>
+        footer
+    </footer>
+    </section>
+    
+</body>
+</html>
