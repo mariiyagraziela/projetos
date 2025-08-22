@@ -107,12 +107,12 @@
            width:;}
     </style>
 </head>
-<body>
+<body id="body">
     <header>
         cabeça
         <nav> links </nav>
     </header>
-    <section class="">
+    <section id="section">
         <h1> Site de agenda </h1>
         <aside>
           <button onclick="escreverNoBloco()" class="salvararquivo">Salvar</button>
@@ -168,7 +168,7 @@
                                 notas.innerHTML = paragrafo;
                                 caixa.appendChild(notas);
                             
-                                notas.onclick = function(){
+                                notas.onclick = function(){//uma função
                                     notaSelecionadaContador = contador;
                                     notaSelecionaPegarID = notas.id;
                                     notas.style.background = "green";
@@ -176,6 +176,7 @@
                                     console.log(contador);
                                     return notas ;
                                 }// function()
+                       
                             document.getElementById("notasDoInput").value = "";
                             document.getElementById("anotacoesDoInput").value = "";
                          
@@ -222,6 +223,7 @@
                     document.getElementById("anotacoesDoInput").value = assuntoDanota;
 
                  } 
+               
                 
                 </script>
         </main>
