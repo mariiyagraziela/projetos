@@ -1,0 +1,35 @@
+Documentação:
+
+
+sumario
+1 
+
+
+
+O que é o projeto:
+um simples bloco de nota para portifolio.
+
+objeiovos:
+Mostrar em forma de projeto minhas experiencias na programção.
+
+
+funções:
+As funções pertencentes ao codigo:
+   -escreverNoBloco(), escreve na área especifica que fica salvo as notas, ou então salva as notas que estão sendo editadas;
+    usei a variavel "salvar" para saber o que vai salvar(as notas novas ou as notas editadas).
+    salvar = true(salvar as notas salvas)
+    salvar = false(salvar a nota que foi editada)
+   -editarArquivo(), edita as notas que ja estão salvas. 
+   -deletarNota(), deleta as notas que esta salvas;
+
+Atualizações:
+
+
+Tecnologias:
+HTML, CSS  e JAVASCRIPT, 
+
+rede Sociais:
+
+
+GitHub:
+

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Minha Primeira Página</title>
   
     <link rel="stylesheet" href="style.css">
@@ -11,14 +13,25 @@
           padding:0;
           box-sizing:border-box;}
         body{
-            
+             
+             margin-left:10%;
+             margin-rigth:10%;
              background:#845EC2;
+             widht:100%;
              
         }
+        @media (max-width:1200px){
+            #id_mostraanotacoes_dousuario{
+              position:absolute;
+              margin-left:400px;  
+            }
+        }
+
         header{
             background:#D65DB1;
             border:1px solid ; 
             height:60px; 
+            width:90%;
                
        }
         nav{
@@ -27,29 +40,41 @@
             height:20px;
             position:absolute;
             margin-top:20px;
+            width:auto;
             
          }
        
         section{
-           width:1365px;
+           width:90%;
            height:550px;
            background:white;
           
-       
-        }  main{
+        }  
+        main{
             margin-left:100px;
             background:#FF9671;
             border:1px solid;
             width:auto;
-            height:450px; 
+            height:450px;
+             
         }
-       
+        main form{
+            display:flex;
+            align-itens:center;
+       }
         aside{
            float:left;
            background:#FF9671;
            border:1px solid ;
            width:250px;
            height:450px;
+           
+       }
+        aside button{
+            border:1px solid ;
+            width:250px;
+            height:100px ;
+            background-color:#FF9671;
        }
         footer{
            background:#FF9671;
@@ -59,9 +84,10 @@
            height:150px;
            
        }
-        #id_mostraanotacoes_dousuario{
+
+      #id_mostraanotacoes_dousuario{
            position:absolute;
-           margin-left:800px;
+           margin-left:500px;
            height:400px;
            width:500px;
            border:1px solid; 
@@ -77,6 +103,8 @@
             background-color: ;
 
         }
+        #anotacoes{height:;
+           width:;}
     </style>
 </head>
 <body>
@@ -84,51 +112,118 @@
         cabeça
         <nav> links </nav>
     </header>
-    <section>
+    <section class="">
         <h1> Site de agenda </h1>
         <aside>
-          aside mbhdbd
+          <button onclick="escreverNoBloco()" class="salvararquivo">Salvar</button>
+          <button onclick="editarArquivo()" class="editarArquivo">Editar</button>
+          <button onclick="deletarNota()" class="lembrete">Deletar</buton>
         </aside>
         <main>
             <form id="meuformulario">
+                <!--input de digitar o nome da nota -->
                 <label for="">nome</label>
-                <input type="text" id="notas" name="" placeholder="Digite um titulo"> </input>
-                <input type="" id="anotacoes" name="" placeholder="Sua nota..."></input>
-                <button type="button" onclick="escreverNoBloco()"> enviar </button>
-            </form>
+                <input type="text" id="notasDoInput" name="" placeholder="Digite um titulo"><br><!caixa para digitar uma nota >
+                <label for="">Nota</label>
+                <!--input de digitar a nota-->
+                <input type="" id="anotacoesDoInput" name="" placeholder="Sua nota...">
+                <!-- <button type="button" onclick="escreverNoBloco()"> enviar </button> -->
+            </form> </div>
+            <!--caixa que vai aparecer as notas exixtentes -->
             <div id="id_mostraanotacoes_dousuario">
-     
+                
             </div>
                 
-                <script type="text/javascript">
+              <script type="text/javascript" href="script.js">
 
                     let todasAsNotas = [];
-                   
+                    let notaSelecionadaContador  = null;
+                    let notaSelecionaPegarID;
+                    let ID ; 
+                    let salvar = true;  
+                    const caixa = document.getElementById('id_mostraanotacoes_dousuario');
+
                     function escreverNoBloco(){
-                        const titulo = document.getElementById("notas").value;
-                        const texto = document.getElementById("anotacoes").value;
-                        const caixa = document.getElementById('id_mostraanotacoes_dousuario');
+                        if(salvar == true){// if 1, serve para a função de salvar uma nota nova, ou uma nota que foi editada
+                            const titulo = document.getElementById("notasDoInput").value;
+                            const texto = document.getElementById("anotacoesDoInput").value;
+                            const caixa = document.getElementById('id_mostraanotacoes_dousuario');
                         
-                        if(titulo &&  texto != null){
-                        todasAsNotas.push(titulo);
-                        todasAsNotas.push(texto);
-                        }
-                        
-                        let notas = "<div id='trechosDasAnotacoes_estanoScript'>";
-                        for(let i = 0; i < todasAsNotas.length; i+=2){
-                        let paragrafo = todasAsNotas[i]+"<br>" + todasAsNotas[i+1]+"</br>";
-                        notas += paragrafo;
-                        
-                         }
-                        notas += '</div>'
-                        caixa.innerHTML = notas; 
-                        document.getElementById("notas").value = "";
-                        document.getElementById("anotacoes").value = "";
+                            if(titulo && texto != null){
+                                todasAsNotas.push(titulo);
+                                todasAsNotas.push(texto);}
 
-                      }
+                            caixa.innerHTML=" ";
+                            let contador = -1;
+                        
+                        
+                            for(let i = 0; i < todasAsNotas.length; i+=2){
+                                contador ++;
+                            
+                                let notas = document.createElement("div");
+                                let notasID = "nota" + contador;
+                                notas.id = notasID;
+                                notas.className = "blocoNota"
+                                let paragrafo = todasAsNotas[i] + "<br>" + todasAsNotas[i+1] +"</br>" ;
+                                notas.innerHTML = paragrafo;
+                                caixa.appendChild(notas);
+                            
+                                notas.onclick = function(){
+                                    notaSelecionadaContador = contador;
+                                    notaSelecionaPegarID = notas.id;
+                                    notas.style.background = "green";
+                                    console.log(notaSelecionaPegarID); 
+                                    console.log(contador);
+                                    return notas ;
+                                }// function()
+                            document.getElementById("notasDoInput").value = "";
+                            document.getElementById("anotacoesDoInput").value = "";
+                         
+                             }// for
+                        
+                            }//fechamento do if 1
+                        else{//Salvar arquivo novo
+                            let tituloNovo = document.getElementById("notasDoInput").value;
+                            let notaNova = document.getElementById("anotacoesDoInput").value;  
+                            console.log(notaNova);//apagar depois
+                            let paragrafoNovo = tituloNovo + "<br>" + notaNova +"</br>" ;
+                            document.getElementById(notaSelecionaPegarID).innerHTML = paragrafoNovo;
+                         }//else
+                    document.getElementById("notasDoInput").innerHTML = "";
+                    document.getElementById("anotacoesDoInput").innerHTML = "";
+                          salvar = true;
+                    }//fechamento function
+             
+                // função para deletar uma nota
+                function deletarNota(){
+                 //clicar na nota, e depois no botão deletar e a nota vai ser deletada    
+                    if(notaSelecionadaContador != null){
+                       todasAsNotas.splice(notaSelecionadaContador,2);
 
+                       let notaPegaDaCaixa = document.getElementById(notaSelecionaPegarID);
+                       notaPegaDaCaixa.remove();
+                    }
+                    notaSelecionadaContador = 0;
+                    notaSelecionaPegarID = 0;
+                   
+                 }
+                // função para editar a nota 
+                function editarArquivo(){
+                    salvar = false;
+                    let posicaoDaNota = 0
+                    posicaoDaNota = notaSelecionadaContador;
+                    let tituloDaNota = todasAsNotas[posicaoDaNota];
+                    let assuntoDanota = todasAsNotas[posicaoDaNota + 1]
+         
+                    console.log(todasAsNotas[posicaoDaNota]); 
+                    console.log(todasAsNotas[posicaoDaNota + 1]);
+                    console.log(salvar);
+                    document.getElementById("notasDoInput").value = tituloDaNota;
+                    document.getElementById("anotacoesDoInput").value = assuntoDanota;
+
+                 } 
+                
                 </script>
-            </div>
         </main>
        
     <footer>
@@ -138,7 +233,4 @@
     
 </body>
 </html>
-let mostraasnotas = "<div id='trechosDasAnotacoes_estanoScript'>";
-                         todasAsNotas.forEach((ta)=>{ 
-                                 mostraasnotas += ta ; document.getElementById('id_mostraanotacoes_dousuario').innerHTML = 
-                         mostraasnotas;
+
