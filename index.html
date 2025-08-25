@@ -168,20 +168,20 @@
                                 notas.innerHTML = paragrafo;
                                 caixa.appendChild(notas);
                             
-                                notas.onclick = function(){//uma função
+                                notas.addEventListener("click", function(){//uma função
                                     notaSelecionadaContador = contador;
                                     notaSelecionaPegarID = notas.id;
                                     notas.style.background = "green";
                                     console.log(notaSelecionaPegarID); 
                                     console.log(contador);
-                                    return notas ;
-                                }// function()
-                       
-                            document.getElementById("notasDoInput").value = "";
-                            document.getElementById("anotacoesDoInput").value = "";
+                                    return notas;
+                                });// function()
+                                
+                            
                          
                              }// for
-                        
+                          //  document.getElementById("notasDoInput").value = "";
+                           // document.getElementById("anotacoesDoInput").value = "";
                             }//fechamento do if 1
                         else{//Salvar arquivo novo
                             let tituloNovo = document.getElementById("notasDoInput").value;
@@ -194,7 +194,8 @@
                     document.getElementById("anotacoesDoInput").innerHTML = "";
                           salvar = true;
                     }//fechamento function
-             
+                                    
+                              
                 // função para deletar uma nota
                 function deletarNota(){
                  //clicar na nota, e depois no botão deletar e a nota vai ser deletada    

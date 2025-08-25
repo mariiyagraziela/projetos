@@ -1,35 +1,56 @@
-Documentação:
+Documentação
+
+
+
+
+
+
+
+
+
+
 
 
 sumario
-1 
+1.O que é o projeto -----------------------------------------------------
+2.objeiovos -------------------------------------------------------------
+3.funções ---------------------------------------------------------------
+4.Atualizações ----------------------------------------------------------
+5.Tecnologias -----------------------------------------------------------
+6.O que falta melhorar --------------------------------------------------
+7.rede Sociais ----------------------------------------------------------
 
 
-
-O que é o projeto:
+1.O que é o projeto:
 um simples bloco de nota para portifolio.
 
-objeiovos:
+2.objeiovos:
 Mostrar em forma de projeto minhas experiencias na programção.
 
 
-funções:
+3.funções:
 As funções pertencentes ao codigo:
    -escreverNoBloco(), escreve na área especifica que fica salvo as notas, ou então salva as notas que estão sendo editadas;
     usei a variavel "salvar" para saber o que vai salvar(as notas novas ou as notas editadas).
     salvar = true(salvar as notas salvas)
-    salvar = false(salvar a nota que foi editada)
-   -editarArquivo(), edita as notas que ja estão salvas. 
-   -deletarNota(), deleta as notas que esta salvas;
+    salvar = false(salvar a nota que foi editada),
 
-Atualizações:
+   -editarArquivo(), edita as notas que ja estão salvas,
+
+   -deletarNota(), deleta as notas que esta salvas.Ao clicar na nota, ela vai ficar verde, então se eu clicar na outras notas existentes elas vão ficar verdes tambem e a cada vez que eu aperto 
+botao de deleta as notas vão sumindo uma por uma,
+
+4.Atualizações:
 
 
-Tecnologias:
+5.Tecnologias:
 HTML, CSS  e JAVASCRIPT, 
 
-rede Sociais:
+6.O que falta melhorar:
+.Quando aperta na nota ela seleciona, mais falta a ação de cricar na nota novamante e ela não ficar mais selecionada.
+.Consertar alguns bugs existentes
+.Ajeitar a ação de 
 
-
-GitHub:
-
+7.rede Sociais:
+7.1GitHub:
+https://github.com/mariiyagraziela/projetos
