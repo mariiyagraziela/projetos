@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css responsivo</title>
+    <style>
+        * { box-sizing: border-box;
+        }
+        body{background-color: purple; 
+
+        }
+        section{width:90%;
+                max-width:1200px;
+                margin:0 auto ;
+                background-color: white;
+        }
+        .container{display:flex;
+                   align-items: stretch; 
+                   min-height:450px;
+        }
+        aside{width:250px;
+              min-height:200px;
+              background-color:pink;
+              display:flex; gap:20px;
+   
+        } 
+        aside .botao{max-height:40px;
+                    
+        }
+        main{flex: 1; /**ocupa o restante do espaço*/
+             background-color:blue;
+        }
+
+        @media (max-width: 768px){
+            .container{flex-direction:column;
+             }  
+             aside{flex-direction:row;
+                   width:100%;gap:20px;
+                   
+
+             } 
+             aside .botao{flex:1; /**cada botão ocupa o mesmo espaço*/
+                          min-height:50%;
+             }              
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <section>
+        <div class="container">
+            <aside>
+                <label>botao 1</label>
+                <input type="button" class="botao" >
+                <label>botao 2</label>
+                <input type="button" class="botao">
+            </aside>
+      
+            <main>
+            main
+            </main>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+</body>
+</html>
