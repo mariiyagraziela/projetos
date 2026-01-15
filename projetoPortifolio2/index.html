@@ -1,104 +1,152 @@
-<!DOCTYPE html>
+<!DOCTYPE html lang="pt-br">
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="2">
+    <meta http-equiv="refresh" content="5">
 
-    
-    <title> Blog </title>
+    <title>Blog</title>
+
     <style>
-        * { box-sizing: border-box;}
-        header{
-               display:flex;
-               border:1px solid red;
-               height:40px;
-              }
-         section{display:flex;
-                 min-height:500px;
-                 border:1px solid red;
-                 margin:0 auto;
-                     
-         }
-         main{width:250px;
-              min-height:200px;
-              flex:1;
-              border:1px solid red;
-         }         
-        
-         aside{width:250px;
-               min-height:200px;
-               border:1px solid red;
+        * {
+            box-sizing: border-box;
+        }
 
-         }
-         
-         footer{ max-width:;
-                 height:200px;
-                 border:1px solid red;
-         }
-         .menu{display:flex;
-               gap:40px;
-         }
-         .card{width:150px;
-               height:150px;
-               border:1px solid red;
-               gap:10px;
-         }
-         .conteudo-principal{width:auto;
-                             min-height:150px;
-                             
-          } 
-          .cards{display:flex;
-                 flex:1;
-                 margin:10px;
-                 border:1px solid black;
- 
-         }
+        body {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            display: block;
+            border: 1px solid black;
+            min-height: 60px;
+            background: #9ddbc9;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            background: blue;
+        }
+
+        main {
+            display: flex;
+            min-height: 500px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        section {
+            width: 250px;
+            min-height: 200px;
+            flex: 1;
+            border: 1px solid black;
+        }
+
+        aside {
+            width: 250px;
+            min-height: 200px;
+            border: 1px solid black;
+        }
+
+        footer {
+            height: 200px;
+            border: 1px solid black;
+            background: #9ddbc9;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            padding-left: 51px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            gap: 40px;
+        }
+
+        .card {
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            gap: 10px;
+        }
+
+        .conteudo-principal {
+            width: auto;
+            min-height: 150px;
+        }
+
+        .cards {
+            display: flex;
+            flex: 1;
+            margin: 10px;
+            gap: 50px;
+        }
+
+        .info_centralizada {
+            margin: auto;
+            width: 200px;
+            margin-top: 50px;
+        }
     </style>
 </head>
+
 <body>
     <header>
+        <h1>Blog Dinamico</h1>
+
         <nav>
-            <div class="menu">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-            </div>
+            <ul class="menu">
+                <li>NOVA PUBLICAÇÃO</li>
+                <li>exemplo 2</li>
+                <li>exemplo 3</li>
+                <li>exemplo 4</li>
+            </ul>
         </nav>
     </header>
-    <section>
-        <main>
+
+    <main>
+        <section>
             <div class="conteudo-principal">
+                <h1>Titulo</h1>
                 Faz-nos cometer erros
-Os fracos deixam se ir abaixo
-Os fortes erguem sempre a cabeça
-Os assim assumem-nos.Faz-nos cometer erros
-Os fracos deixam se ir abaixo
-Os fortes erguem sempre a cabeça
-Os assim assumem-nos.
-Faz-nos cometer erros
-Os fracos deixam se ir abaixo
-Os fortes erguem sempre a cabeça
-Os assim assumem-nos.
-
-
+                Os fracos deixam se ir abaixo
+                Os fortes erguem sempre a cabeça
             </div>
+
             <div class="cards">
-                <div class="card"> </div>
-                <div class="card"> </div>
-                <div class="card"> </div>
-                
-                
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
             </div>
-        </main>
+        </section>
+
         <aside>
-            
+            <img src="img/img_exemplo.jpg" alt=""><br>
+            <img src="img/img_exemplo2.jpeg" alt="">
         </aside>
-    </section>
+    </main>
+
     <footer>
-     
+        <div class="info_centralizada">
+            <address>
+                Nome: Graziela<br>
+                email:
+                <a href="mailto:mariagrazielasouza4@gmail.com">
+                    mariagrazielasouza4@gmail.com
+                </a>
+            </address>
+        </div>
     </footer>
+
     <script></script>
 </body>
 </html>
+
