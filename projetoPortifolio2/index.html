@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5">
+    <meta http-equiv="refresh" content="10">
 
     <title>Blog</title>
 
@@ -84,16 +84,38 @@
         }
 
         .cards {
-            display: flex;
+            display: block;
             flex: 1;
             margin: 10px;
             gap: 50px;
         }
+        .conjuntoumcards{display:flex;
 
+        }
         .info_centralizada {
             margin: auto;
             width: 200px;
             margin-top: 50px;
+        }
+        
+        /* estilização do elementos a parti do arquivo script.js 
+           Direcionado para a parte de publicação
+        */
+        
+        .estilo-input{width: 250px;
+                      padding: 10px;
+                      background-color: pink;
+                      border-radius: 10px;
+                      padding
+        }
+        .estilo-input2{width: 100%;
+                       height: 250px;
+                       resize: vertical;
+
+         }
+        .estilo-botao{display:inline;
+                      width:50px;
+                      border:1px solid black;
         }
     </style>
 </head>
@@ -102,9 +124,9 @@
     <header>
         <h1>Blog Dinamico</h1>
 
-        <nav>
-            <ul class="menu">
-                <li>NOVA PUBLICAÇÃO</li>
+        <nav> <!--   -->
+            <ul class="menu" id="menu">
+                <li class="inde_novaPublicacao" id="barNP"> NOVA PUBLICAÇÃO</li>
                 <li>exemplo 2</li>
                 <li>exemplo 3</li>
                 <li>exemplo 4</li>
@@ -114,23 +136,25 @@
 
     <main>
         <section>
-            <div class="conteudo-principal">
-                <h1>Titulo</h1>
+            <div class="conteudo-principal" id="conteudoPrincipalModificar">
+                <h1 >Titulo</h1>
                 Faz-nos cometer erros
                 Os fracos deixam se ir abaixo
                 Os fortes erguem sempre a cabeça
             </div>
 
-            <div class="cards">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+            <div class="cards" id="sessao-cards">
+                <div class="conjuntocards">
+                    <div class="card" id="card-1"></div>
+                    
+                </div>
+            
             </div>
         </section>
 
         <aside>
-            <img src="img/img_exemplo.jpg" alt=""><br>
-            <img src="img/img_exemplo2.jpeg" alt="">
+            <div><img src="" alt=""></div><br>
+            <div><img src="" alt=""></div>
         </aside>
     </main>
 
@@ -144,9 +168,13 @@
                 </a>
             </address>
         </div>
+<h1 id="teste"></h1>
     </footer>
 
-    <script></script>
+    <script src="script.js">
+     
+    </script>
+    
 </body>
 </html>
 
